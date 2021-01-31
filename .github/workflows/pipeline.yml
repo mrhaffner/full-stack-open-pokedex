@@ -1,9 +1,9 @@
-name: Testing stuff
+name: Deployment pipeline
 
 on:
   push:
     branches:
-      - master
+      - test
 
 jobs:
   a_test_job:
@@ -24,8 +24,6 @@ jobs:
         run: 
           echo "$COMMIT_MESSAGES"
           echo "!contains("$COMMIT_MESSAGES", '#skip')"
-
-name: Deployment pipeline
 
 on:
   push:
