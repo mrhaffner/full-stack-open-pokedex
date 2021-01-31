@@ -33,3 +33,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "stormy-shore-77757" #Must be unique in Heroku
           heroku_email: "mrhaffner13@gmail.com"
+          healthcheck: "https://stormy-shore-77757.herokuapp.com/health"
+          checkstring: "ok"
