@@ -35,3 +35,4 @@ jobs:
           heroku_email: "mrhaffner13@gmail.com"
           healthcheck: "https://stormy-shore-77757.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true
