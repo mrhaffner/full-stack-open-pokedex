@@ -32,7 +32,7 @@ jobs:
           wait-on: http://localhost:5000
       - uses: akhileshns/heroku-deploy@v3.8.9 # This is the action
         if: |
-          ${{ github.event_name == 'push' }} ||
+          ${{ github.event_name == 'push' }} &&
           !contains(github.event.head_commit.message, '#skip')
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
@@ -43,7 +43,7 @@ jobs:
           rollbackonhealthcheckfailed: true
       - name: Bump version and push tag
         if: |
-          ${{ github.event_name == 'push' }} ||
+          ${{ github.event_name == 'push' }} &&
           !contains(github.event.head_commit.message, '#skip')
         uses: anothrNick/github-tag-action@1.33.0
         env:
